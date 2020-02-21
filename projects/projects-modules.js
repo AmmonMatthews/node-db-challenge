@@ -1,4 +1,4 @@
-const db = require('../data/projects.db3')
+const db = require('../data/dbConfig.js')
 
 module.exports= {
     addResource,
@@ -9,12 +9,12 @@ module.exports= {
     findTasks,
 }
 
-function addResource (resource){
+function addResource(resource){
     return db('resource')
         .insert(resource, "id");
 }
 
-function addProject (project){
+function addProject(project){
     return db('project')
         .insert(project, "id");
 }

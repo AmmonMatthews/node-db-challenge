@@ -1,6 +1,7 @@
 const express = require('express')
 
-const Projects = ('./projects-modules.js')
+
+const Projects = require('./projects-modules.js');
 
 const router = express.Router();
 
@@ -9,7 +10,7 @@ router.post('/projects', (req, res) => {
     .then(project => {
         res.status(201).json(project)
     })
-    .cathc(err => {
+    .catch(err => {
         console.log(err)
         res.status(404).json({ error: "couldn't not add project"})
     })
@@ -20,7 +21,7 @@ router.post('/resources', (req, res) => {
     .then(resource => {
         res.status(201).json(resource);
     })
-    .cathc(err => {
+    .catch(err => {
         console.log(err)
         res.status(404).json({ error: "couldn't not add resource"})
     })
@@ -31,7 +32,7 @@ router.post('/tasks', (req, res) => {
         .then(task => {
             res.status(201).json(task)
         })
-        .cathc(err => {
+        .catch(err => {
             console.log(err)
             res.status(404).json({ error: "couldn't not add task"})
         })
@@ -42,7 +43,7 @@ router.get('/resources', (req, res) => {
         .then(resources => {
             res.status(200).json(resources)
         })
-        .cathc(err => {
+        .catch(err => {
             console.log(err)
             res.status(404).json({ error: "couldn't not find resources"})
         })
@@ -54,7 +55,7 @@ router.get('/projects', (req, res) => {
     .then(projects => {
         res.status(200).json(projects)
     })
-    .cathc(err => {
+    .catch(err => {
         console.log(err)
         res.status(404).json({ error: "couldn't not find projects"})
     })
@@ -65,7 +66,7 @@ router.get('/tasks', (req, res) => {
         .then(tasks => {
             res.status(200).json(tasks)
         })
-        .cathc(err => {
+        .catch(err => {
             console.log(err)
             res.status(404).json({ error: "couldn't not find tasks"})
         })

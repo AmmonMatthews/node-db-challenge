@@ -11,6 +11,7 @@ module.exports= {
 
 function addResource(resource){
     return db('resource')
+        .select('resurce_completed')
         .insert(resource, "id");
 }
 

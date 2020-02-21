@@ -5,6 +5,7 @@ const Projects = require('./projects-modules.js');
 
 const router = express.Router();
 
+// Tested
 router.post('/projects', (req, res) => {
     Projects.addProject(req.body)
     .then(project => {
@@ -16,6 +17,7 @@ router.post('/projects', (req, res) => {
     })
 })
 
+// Tested
 router.post('/resources', (req, res) => {
     Projects.addResource(req.body)
     .then(resource => {
@@ -26,7 +28,7 @@ router.post('/resources', (req, res) => {
         res.status(404).json({ error: "couldn't not add resource"})
     })
 })
-
+//Tested
 router.post('/tasks', (req, res) => {
     Projects.addTask(req.body)
         .then(task => {
